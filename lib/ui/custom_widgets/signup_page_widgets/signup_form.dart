@@ -32,24 +32,27 @@ class SignUpForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-      child: Column(
-        children: [
-          Wrap(
-            runSpacing: 16,
-            children: [
-              buildTextFormField('Full Name', Icons.person),
-              buildTextFormField('Email', Icons.email),
-              buildTextFormField('Password', Icons.lock, obscureText: true),
-              buildTextFormField('Confirm Password', Icons.lock,
-                  obscureText: true),
-              const Text(
-                'By signing in you agree to our Terms of use and privacy policy',
-                textAlign: TextAlign.center,
-              ),
-            ],
-          ),
-        ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 16),
+      child: Form(
+        child: Column(
+          children: [
+            Wrap(
+              runSpacing: 16,
+              children: [
+                buildTextFormField('Full Name', Icons.person),
+                buildTextFormField('Email', Icons.email),
+                buildTextFormField('Password', Icons.lock, obscureText: true),
+                buildTextFormField('Confirm Password', Icons.lock,
+                    obscureText: true),
+                const Text(
+                  'By signing in you agree to our Terms of use and privacy policy',
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
