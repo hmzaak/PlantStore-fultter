@@ -9,10 +9,22 @@ class SignUpPage extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 16),
           child: Column(
             children: [
-              textSection,
+              Stack(
+                children: [
+                  textSection,
+                  Positioned(
+                    right: 0,
+                    bottom: 0,
+                    child: SizedBox(
+                      height: 80,
+                      child: Image.asset('assets/leaf.png'),
+                    ),
+                  ),
+                ],
+              ),
               const SignUpForm(),
               const SizedBox(height: 220),
               signUpButtonSection,
@@ -29,18 +41,21 @@ Widget textSection = Padding(
     top: 120,
     bottom: 30,
   ),
-  child: Column(
-    children: const [
-      Text(
-        'Register',
-        style: TextStyle(
-          fontSize: 25,
-          fontWeight: FontWeight.bold,
-          color: Color(0xff184A2C),
+  child: SizedBox(
+    width: double.infinity,
+    child: Column(
+      children: const [
+        Text(
+          'Register',
+          style: TextStyle(
+            fontSize: 25,
+            fontWeight: FontWeight.bold,
+            color: Color(0xff184A2C),
+          ),
         ),
-      ),
-      Text('Create your new account'),
-    ],
+        Text('Create your new account'),
+      ],
+    ),
   ),
 );
 
