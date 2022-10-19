@@ -1,66 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:plantstore/ui/custom_widgets/homepage_widgets/bottom_navbar.dart';
+import 'package:plantstore/ui/custom_widgets/homepage_widgets/buttons_row.dart';
+import 'package:plantstore/ui/custom_widgets/homepage_widgets/plants_list.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   static const route = '/home-page';
   const HomePage({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  int _selectedIndex = 0;
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Column(
         children: [
           topSection(context),
           searchBar,
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              TextButton(
-                onPressed: () {},
-                child: const Text(
-                  'Remcommended',
-                  style: TextStyle(
-                    color: Color(0xff184A2C),
-                  ),
-                ),
-              ),
-              TextButton(onPressed: () {}, child: const Text('Top')),
-              TextButton(onPressed: () {}, child: const Text('Indoor')),
-              TextButton(onPressed: () {}, child: const Text('Outdoor')),
-            ],
-          )
+          const ButtonsRow(),
+          SizedBox(height: height * 0.37, child: const PlantsList()),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart),
-            label: 'Cart',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: const Color(0xff184A2C),
-        onTap: _onItemTapped,
-      ),
+      bottomNavigationBar: const BottomNavBar(),
     );
   }
 }

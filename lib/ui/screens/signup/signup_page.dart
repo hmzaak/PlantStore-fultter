@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:plantstore/ui/custom_widgets/signup_page_widgets/signup_form.dart';
+import 'package:plantstore/ui/custom_widgets/signuppage_widgets/signup_form.dart';
 
 class SignUpPage extends StatelessWidget {
   static const route = '/signup-page';

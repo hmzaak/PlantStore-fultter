@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:plantstore/ui/custom_widgets/login_page_widgets/login_form.dart';
+import 'package:plantstore/ui/custom_widgets/loginpage_widgets/login_form.dart';
 
 class LoginPage extends StatelessWidget {
   static const route = '/login-page';

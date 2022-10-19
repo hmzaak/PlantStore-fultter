@@ -63,6 +63,11 @@ flutter:
   assets:
     - assets/leaf.png
     - assets/leaves.jpg
+    - assets/arboricola.png
+    - assets/dieffenbachia.png
+    - assets/ficusElista.png
+    - assets/sansevieria.png
+    - assets/snakePlant.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
