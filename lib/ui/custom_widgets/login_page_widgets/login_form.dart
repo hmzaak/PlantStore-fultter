@@ -68,37 +68,40 @@ class LoginForm extends StatelessWidget {
   }
 }
 
-Widget topTextSection = Stack(
-  children: [
-    Padding(
-      padding: const EdgeInsets.only(top: 100, bottom: 30),
-      child: SizedBox(
-        width: double.infinity,
-        child: Column(
-          children: const [
-            Text(
-              'Welcome back',
-              style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
-                color: Color(0xff184A2C),
+Widget topTextSection(BuildContext context) {
+  final height = MediaQuery.of(context).size.height;
+  return Stack(
+    children: [
+      Padding(
+        padding: EdgeInsets.only(top: height * 0.11, bottom: height * 0.03),
+        child: SizedBox(
+          width: double.infinity,
+          child: Column(
+            children: const [
+              Text(
+                'Welcome back',
+                style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xff184A2C),
+                ),
               ),
-            ),
-            Text('Login to your account'),
-          ],
+              Text('Login to your account'),
+            ],
+          ),
         ),
       ),
-    ),
-    Positioned(
-      right: 0,
-      bottom: 0,
-      child: SizedBox(
-        height: 80,
-        child: Image.asset('assets/leaf.png'),
+      Positioned(
+        right: 0,
+        bottom: 0,
+        child: SizedBox(
+          height: height * 0.1,
+          child: Image.asset('assets/leaf.png'),
+        ),
       ),
-    ),
-  ],
-);
+    ],
+  );
+}
 
 Widget loginButtonSection(BuildContext context) => Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25),

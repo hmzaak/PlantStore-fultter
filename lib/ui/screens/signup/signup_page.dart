@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:plantstore/ui/custom_widgets/signup_page_widgets/signup_form.dart';
-import 'package:plantstore/ui/screens/login/login_page.dart';
 
 class SignUpPage extends StatelessWidget {
   static const route = '/signup-page';
@@ -8,13 +7,14 @@ class SignUpPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
-            topTextSection,
+            topTextSection(context),
             const SignUpForm(),
-            const SizedBox(height: 215),
+            SizedBox(height: height * 0.24),
             signUpButtonSection(context),
           ],
         ),

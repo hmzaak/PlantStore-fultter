@@ -59,37 +59,40 @@ class SignUpForm extends StatelessWidget {
   }
 }
 
-Widget topTextSection = Stack(
-  children: [
-    Padding(
-      padding: const EdgeInsets.only(top: 120, bottom: 30),
-      child: SizedBox(
-        width: double.infinity,
-        child: Column(
-          children: const [
-            Text(
-              'Register',
-              style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
-                color: Color(0xff184A2C),
+Widget topTextSection(BuildContext context) {
+  final height = MediaQuery.of(context).size.height;
+  return Stack(
+    children: [
+      Padding(
+        padding: EdgeInsets.only(top: height * 0.14, bottom: height * 0.03),
+        child: SizedBox(
+          width: double.infinity,
+          child: Column(
+            children: const [
+              Text(
+                'Register',
+                style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xff184A2C),
+                ),
               ),
-            ),
-            Text('Create your new account'),
-          ],
+              Text('Create your new account'),
+            ],
+          ),
         ),
       ),
-    ),
-    Positioned(
-      right: 0,
-      bottom: 0,
-      child: SizedBox(
-        height: 80,
-        child: Image.asset('assets/leaf.png'),
+      Positioned(
+        right: 0,
+        bottom: 0,
+        child: SizedBox(
+          height: height * 0.1,
+          child: Image.asset('assets/leaf.png'),
+        ),
       ),
-    ),
-  ],
-);
+    ],
+  );
+}
 
 Widget signUpButtonSection(BuildContext context) => Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25),

@@ -7,14 +7,15 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
             Image.asset('assets/leaves.jpg'),
-            topTextSection,
+            topTextSection(context),
             const LoginForm(),
-            const SizedBox(height: 130),
+            SizedBox(height: height * 0.15),
             loginButtonSection(context),
           ],
         ),
