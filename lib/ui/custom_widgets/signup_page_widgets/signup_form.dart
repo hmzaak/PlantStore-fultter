@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plantstore/ui/screens/homepage/home_page.dart';
 import 'package:plantstore/ui/screens/login/login_page.dart';
 
 // Widget builder function for TextFormFields.
@@ -108,7 +109,9 @@ Widget signUpButtonSection(BuildContext context) => Padding(
                 padding: const EdgeInsets.all(16),
                 backgroundColor: const Color(0xff184A2C),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushReplacementNamed(HomePage.route);
+              },
               child: const Text('Sign Up'),
             ),
           ),
