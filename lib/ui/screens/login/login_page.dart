@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:plantstore/ui/custom_widgets/login_page_widgets/login_form.dart';
 
 class LoginPage extends StatelessWidget {
+  static const route = '/login-page';
   const LoginPage({Key? key}) : super(key: key);
 
   @override
@@ -14,7 +15,7 @@ class LoginPage extends StatelessWidget {
             topTextSection,
             const LoginForm(),
             const SizedBox(height: 130),
-            loginButtonSection,
+            loginButtonSection(context),
           ],
         ),
       ),

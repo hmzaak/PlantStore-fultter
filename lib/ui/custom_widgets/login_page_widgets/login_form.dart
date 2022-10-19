@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plantstore/ui/screens/signup/signup_page.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({Key? key}) : super(key: key);
@@ -99,39 +100,41 @@ Widget topTextSection = Stack(
   ],
 );
 
-Widget loginButtonSection = Padding(
-  padding: const EdgeInsets.symmetric(horizontal: 25),
-  child: Column(
-    children: [
-      SizedBox(
-        width: double.infinity,
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-            ),
-            padding: const EdgeInsets.all(16),
-            backgroundColor: const Color(0xff184A2C),
-          ),
-          onPressed: () {},
-          child: const Text('Log In'),
-        ),
-      ),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+Widget loginButtonSection(BuildContext context) => Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 25),
+      child: Column(
         children: [
-          const Text('Don\'t have an account?'),
-          TextButton(
-            onPressed: () {},
-            child: const Text(
-              'Sign Up',
-              style: TextStyle(
-                color: Color(0xff184A2C),
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                padding: const EdgeInsets.all(16),
+                backgroundColor: const Color(0xff184A2C),
               ),
+              onPressed: () {},
+              child: const Text('Log In'),
             ),
-          )
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text('Don\'t have an account?'),
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pushReplacementNamed(SignUpPage.route);
+                },
+                child: const Text(
+                  'Sign Up',
+                  style: TextStyle(
+                    color: Color(0xff184A2C),
+                  ),
+                ),
+              )
+            ],
+          ),
         ],
       ),
-    ],
-  ),
-);
+    );
