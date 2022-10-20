@@ -17,9 +17,26 @@ class ButtonsRow extends StatelessWidget {
             ),
           ),
         ),
-        TextButton(onPressed: () {}, child: const Text('Top')),
-        TextButton(onPressed: () {}, child: const Text('Indoor')),
-        TextButton(onPressed: () {}, child: const Text('Outdoor')),
+        TextButton(
+          onPressed: () {},
+          child: const Text(
+            'Top',
+            style: TextStyle(color: Colors.grey),
+          ),
+        ),
+        TextButton(
+          onPressed: () {},
+          child: const Text(
+            'Indoor',
+            style: TextStyle(color: Colors.grey),
+          ),
+        ),
+        TextButton(
+            onPressed: () {},
+            child: const Text(
+              'Outdoor',
+              style: TextStyle(color: Colors.grey),
+            )),
       ],
     );
   }

@@ -29,7 +29,7 @@ class PlantsList extends StatelessWidget {
                   height: size.height * 0.27,
                   width: size.width * 0.48,
                   decoration: BoxDecoration(
-                    color: Colors.grey,
+                    color: Colors.grey.withOpacity(0.2),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Stack(
@@ -37,9 +37,9 @@ class PlantsList extends StatelessWidget {
                       ClipPath(
                         clipper: WaveClipper(),
                         child: Container(
-                          decoration: const BoxDecoration(
-                            color: Colors.green,
-                            borderRadius: BorderRadius.only(
+                          decoration: BoxDecoration(
+                            color: Colors.green.withOpacity(0.4),
+                            borderRadius: const BorderRadius.only(
                               topLeft: Radius.circular(20.0),
                               topRight: Radius.circular(20.0),
                             ),
@@ -55,6 +55,47 @@ class PlantsList extends StatelessWidget {
                 height: size.height * 0.25,
                 child: plants[index].image,
               ),
+              Positioned(
+                bottom: 10,
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 7),
+                  height: size.height * 0.06,
+                  width: size.width * 0.48,
+                  // decoration: BoxDecoration(border: Border.all()),
+                  child: Row(
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Text(
+                            plants[index].category,
+                            style: const TextStyle(color: Colors.grey),
+                          ),
+                          Text(
+                            plants[index].name,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xff184A2C),
+                            ),
+                          )
+                        ],
+                      ),
+                      const Spacer(),
+                      Container(
+                        height: size.height * 0.03,
+                        width: size.width * 0.1,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          color: Colors.white,
+                        ),
+                        alignment: Alignment.center,
+                        child: Text(plants[index].price),
+                      )
+                    ],
+                  ),
+                ),
+              )
             ],
           ),
         );
