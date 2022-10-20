@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:plantstore/ui/custom_widgets/homepage_widgets/bottom_navbar.dart';
 import 'package:plantstore/ui/custom_widgets/homepage_widgets/buttons_row.dart';
 import 'package:plantstore/ui/custom_widgets/homepage_widgets/plants_list.dart';
+import 'package:plantstore/ui/custom_widgets/homepage_widgets/recent_viewed_section.dart';
 
 class HomePage extends StatelessWidget {
   static const route = '/home-page';
@@ -17,6 +18,8 @@ class HomePage extends StatelessWidget {
           searchBar,
           const ButtonsRow(),
           SizedBox(height: height * 0.37, child: const PlantsList()),
+          const SizedBox(height: 20),
+          const RecentViewedSection(),
         ],
       ),
       bottomNavigationBar: const BottomNavBar(),
