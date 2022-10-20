@@ -14,7 +14,7 @@ class PlantsList extends StatelessWidget {
       itemCount: plants.length,
       itemBuilder: (BuildContext context, int index) {
         return Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(10.0),
           child: Stack(
             children: [
               Container(
@@ -58,7 +58,7 @@ class PlantsList extends StatelessWidget {
               Positioned(
                 bottom: 10,
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 7),
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
                   height: size.height * 0.06,
                   width: size.width * 0.48,
                   // decoration: BoxDecoration(border: Border.all()),
