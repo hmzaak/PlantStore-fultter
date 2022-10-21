@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lorem/flutter_lorem.dart';
+import 'package:plantstore/ui/screens/cart_page/cart_page.dart';
 
 class MyDraggableScrollableSheet extends StatelessWidget {
   const MyDraggableScrollableSheet({Key? key}) : super(key: key);
@@ -41,7 +42,7 @@ class MyDraggableScrollableSheet extends StatelessWidget {
                       plantNameSection(),
                       aboutSection(text),
                       featureSection(size),
-                      bottomSection(size),
+                      bottomSection(context, size),
                     ],
                   ),
                 ),
@@ -200,7 +201,7 @@ Widget featureSection(Size size) {
   );
 }
 
-Widget bottomSection(Size size) => Row(
+Widget bottomSection(BuildContext context, Size size) => Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Container(
@@ -217,7 +218,9 @@ Widget bottomSection(Size size) => Row(
         SizedBox(
           width: size.width * 0.7,
           child: ElevatedButton.icon(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushNamed(CartPage.route);
+            },
             icon: const Icon(Icons.shopping_bag_outlined),
             label: const Text('Buy Now'),
             style: ElevatedButton.styleFrom(

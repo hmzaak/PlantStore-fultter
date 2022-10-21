@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plantstore/ui/screens/cart_page/cart_page.dart';
 import 'package:plantstore/ui/screens/homepage/home_page.dart';
 import 'package:plantstore/ui/screens/login/login_page.dart';
 import 'package:plantstore/ui/screens/plant_details/plant_details_page.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
         '/login-page': (context) => const LoginPage(),
         '/signup-page': (context) => const SignUpPage(),
         '/home-page': (context) => const HomePage(),
+        '/cart-page': (context) => const CartPage(),
       },
     );
   }
