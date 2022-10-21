@@ -36,7 +36,6 @@ Widget buildCartItem(Size size, String subText) {
     padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
     margin: const EdgeInsets.symmetric(vertical: 6),
     decoration: BoxDecoration(
-      border: Border.all(),
       color: Colors.grey[300],
       borderRadius: BorderRadius.circular(10),
     ),
@@ -58,66 +57,65 @@ Widget buildCartItem(Size size, String subText) {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            const Text('Lily Plant'),
-            Text(subText),
-            Container(
-              width: 120,
-              height: 30,
-              decoration: BoxDecoration(
-                border: Border.all(),
+            const Text(
+              'Lily Plant',
+              style: TextStyle(
+                color: Color(0xff184A2C),
+                fontWeight: FontWeight.bold,
               ),
+            ),
+            Text(subText),
+            SizedBox(
+              width: size.width * 0.25,
+              height: size.height * 0.03,
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    alignment: Alignment.center,
-                    width: 40,
-                    decoration: BoxDecoration(
-                      border: Border.all(),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: const Text(
-                      '-',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                  ),
+                  plusMinusButton('-'),
                   const Text(
                     '2',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
-                  Container(
-                    alignment: Alignment.center,
-                    width: 40,
-                    decoration: BoxDecoration(
-                      border: Border.all(),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: const Text(
-                      '+',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                  ),
+                  plusMinusButton('+'),
                 ],
               ),
             )
           ],
         ),
         const Spacer(),
-        Container(
+        SizedBox(
           height: size.height * 0.10,
-          decoration: BoxDecoration(
-            border: Border.all(),
-          ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.end,
-            children: const [
-              Icon(Icons.more_vert),
-              Text('\$26.0'),
+            children: [
+              const Icon(Icons.more_vert),
+              Text(
+                '\$26.0',
+                style: TextStyle(
+                  color: Colors.lightGreen[600],
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ],
           ),
         )
       ],
+    ),
+  );
+}
+
+Widget plusMinusButton(String sign) {
+  return Container(
+    alignment: Alignment.center,
+    width: 40,
+    decoration: BoxDecoration(
+      border: Border.all(),
+      borderRadius: BorderRadius.circular(8),
+    ),
+    child: Text(
+      sign,
+      style: const TextStyle(fontWeight: FontWeight.bold),
     ),
   );
 }

@@ -8,6 +8,7 @@ class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+
     return Scaffold(
       body: Column(
         children: [
@@ -16,16 +17,7 @@ class CartPage extends StatelessWidget {
           const CartItemsListView(),
         ],
       ),
-      bottomSheet: Container(
-        height: size.height * 0.32,
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20),
-            topRight: Radius.circular(20),
-          ),
-          color: Colors.red,
-        ),
-      ),
+      bottomSheet: myBottomSheet(size),
     );
   }
 }
@@ -58,3 +50,96 @@ Widget topBar(BuildContext context, Size size) => Container(
         ],
       ),
     );
+
+Widget myBottomSheet(Size size) {
+  TextStyle myStyle = const TextStyle(
+    fontWeight: FontWeight.bold,
+    color: Color(0xff184A2C),
+    fontSize: 16,
+  );
+  return Container(
+    height: size.height * 0.32,
+    decoration: const BoxDecoration(
+      borderRadius: BorderRadius.only(
+        topLeft: Radius.circular(20),
+        topRight: Radius.circular(20),
+      ),
+      color: Color.fromARGB(255, 222, 238, 223),
+    ),
+    child: Padding(
+      padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+      child: Column(
+        children: [
+          Container(
+            margin: const EdgeInsets.symmetric(vertical: 10),
+            child: Row(
+              children: [
+                Text(
+                  'Subprice',
+                  style: myStyle,
+                ),
+                const Spacer(),
+                Text(
+                  '\$74.00',
+                  style: myStyle,
+                ),
+              ],
+            ),
+          ),
+          Container(
+            margin: const EdgeInsets.symmetric(vertical: 10),
+            child: Row(
+              children: [
+                Text(
+                  'Subprice',
+                  style: myStyle,
+                ),
+                const Spacer(),
+                Text(
+                  '\$74.00',
+                  style: myStyle,
+                ),
+              ],
+            ),
+          ),
+          Container(
+            margin: const EdgeInsets.symmetric(vertical: 10),
+            child: const Divider(
+              thickness: 3,
+            ),
+          ),
+          Container(
+            margin: const EdgeInsets.only(bottom: 30),
+            child: Row(
+              children: [
+                Text(
+                  'Total:',
+                  style: myStyle,
+                ),
+                const Spacer(),
+                Text(
+                  '\$84',
+                  style: myStyle,
+                )
+              ],
+            ),
+          ),
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                padding: const EdgeInsets.all(16),
+                backgroundColor: const Color(0xff184A2C),
+              ),
+              onPressed: () {},
+              child: const Text('Place your order'),
+            ),
+          )
+        ],
+      ),
+    ),
+  );
+}
