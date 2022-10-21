@@ -22,16 +22,31 @@ class MyDraggableScrollableSheet extends StatelessWidget {
               topRight: Radius.circular(60),
             ),
           ),
-          child: SingleChildScrollView(
-            controller: scrollController,
-            child: Column(
-              children: [
-                plantNameSection(),
-                aboutSection(text),
-                featureSection(size),
-                bottomSection(size),
-              ],
-            ),
+          child: Column(
+            children: [
+              Container(
+                height: 5,
+                width: size.width * 0.2,
+                margin: const EdgeInsets.only(top: 10),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(3),
+                  color: Colors.grey[700],
+                ),
+              ),
+              Expanded(
+                child: SingleChildScrollView(
+                  controller: scrollController,
+                  child: Column(
+                    children: [
+                      plantNameSection(),
+                      aboutSection(text),
+                      featureSection(size),
+                      bottomSection(size),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
         );
       },
@@ -46,7 +61,7 @@ Widget plantNameSection() {
   );
   return Container(
     margin: const EdgeInsets.symmetric(
-      vertical: 40,
+      vertical: 30,
       horizontal: 20,
     ),
     child: Row(
@@ -172,7 +187,7 @@ Widget featureSection(Size size) {
 
   // Return scrollable row of features
   return Container(
-    margin: const EdgeInsets.symmetric(vertical: 40),
+    margin: const EdgeInsets.symmetric(vertical: 35),
     height: 80,
     child: ListView(
       scrollDirection: Axis.horizontal,
