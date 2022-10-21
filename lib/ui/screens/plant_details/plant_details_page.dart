@@ -37,7 +37,7 @@ Widget backPage(Size size) => Padding(
                   ),
                   child: IconButton(
                     onPressed: () {},
-                    icon: const Icon(Icons.arrow_back_ios),
+                    icon: const Icon(Icons.arrow_back_ios_new),
                     color: Colors.black,
                   ),
                 ),
