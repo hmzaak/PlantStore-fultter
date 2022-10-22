@@ -66,79 +66,81 @@ Widget myBottomSheet(Size size) {
       ),
       color: Color.fromARGB(255, 222, 238, 223),
     ),
-    child: Padding(
-      padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
-      child: Column(
-        children: [
-          Container(
-            margin: const EdgeInsets.symmetric(vertical: 10),
-            child: Row(
-              children: [
-                Text(
-                  'Subprice',
-                  style: myStyle,
-                ),
-                const Spacer(),
-                Text(
-                  '\$74.00',
-                  style: myStyle,
-                ),
-              ],
-            ),
-          ),
-          Container(
-            margin: const EdgeInsets.symmetric(vertical: 10),
-            child: Row(
-              children: [
-                Text(
-                  'Subprice',
-                  style: myStyle,
-                ),
-                const Spacer(),
-                Text(
-                  '\$74.00',
-                  style: myStyle,
-                ),
-              ],
-            ),
-          ),
-          Container(
-            margin: const EdgeInsets.symmetric(vertical: 10),
-            child: const Divider(
-              thickness: 3,
-            ),
-          ),
-          Container(
-            margin: const EdgeInsets.only(bottom: 30),
-            child: Row(
-              children: [
-                Text(
-                  'Total:',
-                  style: myStyle,
-                ),
-                const Spacer(),
-                Text(
-                  '\$84',
-                  style: myStyle,
-                )
-              ],
-            ),
-          ),
-          SizedBox(
-            width: double.infinity,
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                padding: const EdgeInsets.all(16),
-                backgroundColor: const Color(0xff184A2C),
+    child: SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+        child: Column(
+          children: [
+            Container(
+              margin: const EdgeInsets.symmetric(vertical: 10),
+              child: Row(
+                children: [
+                  Text(
+                    'Subprice',
+                    style: myStyle,
+                  ),
+                  const Spacer(),
+                  Text(
+                    '\$74.00',
+                    style: myStyle,
+                  ),
+                ],
               ),
-              onPressed: () {},
-              child: const Text('Place your order'),
             ),
-          )
-        ],
+            Container(
+              margin: const EdgeInsets.symmetric(vertical: 10),
+              child: Row(
+                children: [
+                  Text(
+                    'Subprice',
+                    style: myStyle,
+                  ),
+                  const Spacer(),
+                  Text(
+                    '\$74.00',
+                    style: myStyle,
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.symmetric(vertical: 10),
+              child: const Divider(
+                thickness: 3,
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(bottom: 30),
+              child: Row(
+                children: [
+                  Text(
+                    'Total:',
+                    style: myStyle,
+                  ),
+                  const Spacer(),
+                  Text(
+                    '\$84',
+                    style: myStyle,
+                  )
+                ],
+              ),
+            ),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  padding: const EdgeInsets.all(16),
+                  backgroundColor: const Color(0xff184A2C),
+                ),
+                onPressed: () {},
+                child: const Text('Place your order'),
+              ),
+            )
+          ],
+        ),
       ),
     ),
   );

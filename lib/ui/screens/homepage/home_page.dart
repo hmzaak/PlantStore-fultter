@@ -13,15 +13,17 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
-      body: Column(
-        children: [
-          topSection(context),
-          searchBar,
-          const ButtonsRow(),
-          SizedBox(height: height * 0.37, child: const PlantsList()),
-          SizedBox(height: height * 0.04),
-          const RecentViewedSection(),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            topSection(context),
+            searchBar,
+            const ButtonsRow(),
+            SizedBox(height: height * 0.37, child: const PlantsList()),
+            SizedBox(height: height * 0.04),
+            const RecentViewedSection(),
+          ],
+        ),
       ),
       bottomNavigationBar: const BottomNavBar(),
     );
