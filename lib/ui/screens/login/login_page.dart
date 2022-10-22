@@ -12,7 +12,10 @@ class LoginPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Image.asset('assets/leaves.jpg'),
+            ClipPath(
+              clipper: ImageClipper(),
+              child: Image.asset('assets/leaves.jpg'),
+            ),
             topTextSection(context),
             const LoginForm(),
             SizedBox(height: height * 0.15),
@@ -22,4 +25,23 @@ class LoginPage extends StatelessWidget {
       ),
     );
   }
+}
+
+class ImageClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    Path path = Path();
+    path.lineTo(0, size.height - 30);
+    // first controlling poing
+    var firstStart = Offset(size.width / 2.5, size.height);
+    var firstEnd = Offset(size.width, size.height - 100);
+    path.quadraticBezierTo(
+        firstStart.dx, firstStart.dy, firstEnd.dx, firstEnd.dy);
+    path.lineTo(size.width, 0);
+
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) => true;
 }

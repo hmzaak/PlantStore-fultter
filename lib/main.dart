@@ -20,12 +20,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const PlantDetailsPage(),
+      home: const LoginPage(),
       routes: {
         '/login-page': (context) => const LoginPage(),
         '/signup-page': (context) => const SignUpPage(),
         '/home-page': (context) => const HomePage(),
         '/cart-page': (context) => const CartPage(),
+        '/plantDetails-page': (context) => const PlantDetailsPage(),
       },
     );
   }

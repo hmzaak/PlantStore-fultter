@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plantstore/model/plant.dart';
 import 'package:plantstore/model/plants_repository.dart';
+import 'package:plantstore/ui/screens/plant_details/plant_details_page.dart';
 
 class PlantsList extends StatelessWidget {
   const PlantsList({Key? key}) : super(key: key);
@@ -19,35 +20,37 @@ class PlantsList extends StatelessWidget {
             children: [
               Container(
                 width: size.width * 0.48,
-                // decoration: BoxDecoration(
-                //   border: Border.all(),
-                // ),
               ),
               Positioned(
                 bottom: 0,
-                child: Container(
-                  height: size.height * 0.27,
-                  width: size.width * 0.48,
-                  decoration: BoxDecoration(
-                    color: Colors.grey.withOpacity(0.2),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Stack(
-                    children: [
-                      ClipPath(
-                        clipper: WaveClipper(),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.green.withOpacity(0.4),
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(20.0),
-                              topRight: Radius.circular(20.0),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.of(context).pushNamed(PlantDetailsPage.route);
+                  },
+                  child: Container(
+                    height: size.height * 0.27,
+                    width: size.width * 0.48,
+                    decoration: BoxDecoration(
+                      color: Colors.grey.withOpacity(0.2),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Stack(
+                      children: [
+                        ClipPath(
+                          clipper: WaveClipper(),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.green.withOpacity(0.4),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(20.0),
+                                topRight: Radius.circular(20.0),
+                              ),
                             ),
+                            height: size.height * 0.22,
                           ),
-                          height: size.height * 0.22,
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),

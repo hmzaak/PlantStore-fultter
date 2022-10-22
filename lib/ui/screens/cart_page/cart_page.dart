@@ -30,7 +30,7 @@ Widget topBar(BuildContext context, Size size) => Container(
             height: size.width * 0.1,
             width: size.width * 0.1,
             decoration: BoxDecoration(
-              color: Colors.grey[400],
+              color: Colors.grey[300],
               shape: BoxShape.circle,
             ),
             child: IconButton(

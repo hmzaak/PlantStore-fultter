@@ -38,8 +38,8 @@ class RecentViewedSection extends StatelessWidget {
                       margin: const EdgeInsets.only(right: 15),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(15),
-                        child: Image.network(
-                          'https://images.unsplash.com/photo-1520412099551-62b6bafeb5bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+                        child: Image.asset(
+                          'assets/bonsai.jpg',
                           fit: BoxFit.cover,
                         ),
                       ),

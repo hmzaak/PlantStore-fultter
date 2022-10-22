@@ -3,6 +3,7 @@ import 'package:plantstore/ui/custom_widgets/homepage_widgets/bottom_navbar.dart
 import 'package:plantstore/ui/custom_widgets/homepage_widgets/buttons_row.dart';
 import 'package:plantstore/ui/custom_widgets/homepage_widgets/plants_list.dart';
 import 'package:plantstore/ui/custom_widgets/homepage_widgets/recent_viewed_section.dart';
+import 'package:plantstore/ui/screens/cart_page/cart_page.dart';
 
 class HomePage extends StatelessWidget {
   static const route = '/home-page';
@@ -18,7 +19,7 @@ class HomePage extends StatelessWidget {
           searchBar,
           const ButtonsRow(),
           SizedBox(height: height * 0.37, child: const PlantsList()),
-          const SizedBox(height: 20),
+          SizedBox(height: height * 0.04),
           const RecentViewedSection(),
         ],
       ),
@@ -51,7 +52,9 @@ Widget topSection(BuildContext context) {
                   color: Color(0xff184A2C),
                 ),
                 child: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(CartPage.route);
+                  },
                   icon: const Icon(Icons.shopping_cart_outlined),
                   color: Colors.white,
                 ),

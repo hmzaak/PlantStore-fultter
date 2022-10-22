@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:plantstore/ui/custom_widgets/plant_details_page_widgets/draggable_scrollable_sheet.dart';
 
 class PlantDetailsPage extends StatelessWidget {
+  static const route = '/plantDetails-page';
   const PlantDetailsPage({Key? key}) : super(key: key);
 
   @override
@@ -11,7 +12,7 @@ class PlantDetailsPage extends StatelessWidget {
       backgroundColor: Colors.green[50],
       body: Stack(
         children: [
-          backPage(size),
+          backPage(context, size),
           const MyDraggableScrollableSheet(),
         ],
       ),
@@ -19,7 +20,7 @@ class PlantDetailsPage extends StatelessWidget {
   }
 }
 
-Widget backPage(Size size) => Padding(
+Widget backPage(BuildContext context, Size size) => Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25),
       child: Column(
         children: [
@@ -36,7 +37,9 @@ Widget backPage(Size size) => Padding(
                     color: Colors.white,
                   ),
                   child: IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
                     icon: const Icon(Icons.arrow_back_ios_new),
                     color: Colors.black,
                   ),
