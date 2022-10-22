@@ -8,7 +8,6 @@ class PlantsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     List<Plant> plants = PlantsRepository.loadPlants();
     return ListView.builder(
       scrollDirection: Axis.horizontal,
@@ -19,7 +18,7 @@ class PlantsList extends StatelessWidget {
           child: Stack(
             children: [
               Container(
-                width: size.width * 0.48,
+                width: 200,
               ),
               Positioned(
                 bottom: 0,
@@ -28,8 +27,8 @@ class PlantsList extends StatelessWidget {
                     Navigator.of(context).pushNamed(PlantDetailsPage.route);
                   },
                   child: Container(
-                    height: size.height * 0.27,
-                    width: size.width * 0.48,
+                    height: 240,
+                    width: 200,
                     decoration: BoxDecoration(
                       color: Colors.grey.withOpacity(0.2),
                       borderRadius: BorderRadius.circular(20),
@@ -46,7 +45,7 @@ class PlantsList extends StatelessWidget {
                                 topRight: Radius.circular(20.0),
                               ),
                             ),
-                            height: size.height * 0.22,
+                            height: 200,
                           ),
                         ),
                       ],
@@ -55,16 +54,15 @@ class PlantsList extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: size.height * 0.25,
+                height: 220,
                 child: plants[index].image,
               ),
               Positioned(
                 bottom: 10,
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
-                  height: size.height * 0.06,
-                  width: size.width * 0.48,
-                  // decoration: BoxDecoration(border: Border.all()),
+                  height: 55,
+                  width: 200,
                   child: Row(
                     children: [
                       Column(
@@ -86,8 +84,8 @@ class PlantsList extends StatelessWidget {
                       ),
                       const Spacer(),
                       Container(
-                        height: size.height * 0.03,
-                        width: size.width * 0.1,
+                        height: 30,
+                        width: 40,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5),
                           color: Colors.white,

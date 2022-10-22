@@ -11,7 +11,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -19,8 +18,8 @@ class HomePage extends StatelessWidget {
             topSection(context),
             searchBar,
             const ButtonsRow(),
-            SizedBox(height: height * 0.37, child: const PlantsList()),
-            SizedBox(height: height * 0.04),
+            const SizedBox(height: 330, child: PlantsList()),
+            const SizedBox(height: 30),
             const RecentViewedSection(),
           ],
         ),
@@ -46,20 +45,17 @@ Widget topSection(BuildContext context) {
               ),
             ),
             const Spacer(),
-            ClipOval(
-              child: Container(
-                height: width * 0.1,
-                width: width * 0.1,
-                decoration: const BoxDecoration(
-                  color: Color(0xff184A2C),
-                ),
-                child: IconButton(
-                  onPressed: () {
-                    Navigator.of(context).pushNamed(CartPage.route);
-                  },
-                  icon: const Icon(Icons.shopping_cart_outlined),
-                  color: Colors.white,
-                ),
+            Container(
+              decoration: const BoxDecoration(
+                color: Color(0xff184A2C),
+                shape: BoxShape.circle,
+              ),
+              child: IconButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed(CartPage.route);
+                },
+                icon: const Icon(Icons.shopping_cart_outlined),
+                color: Colors.white,
               ),
             )
           ],
